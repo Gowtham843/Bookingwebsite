@@ -35,7 +35,7 @@
         <p>  <?php echo $content_r['about_b_text'] ?>.</p>
       </div>
       <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order1">
-        <img src="images/about.jpg" alt="" class="w-100">
+        <img src="images/about-ceoimage.jpg" alt="" class="w-100">
       </div>
     </div>
   </div>

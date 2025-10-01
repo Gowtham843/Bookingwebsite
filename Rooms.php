@@ -45,7 +45,7 @@
                 <label class="form-label" style="font-weight: 500;">Check-out</label>
                 <input type="date" id="checkout" class="form-control shadow-none" onchange="chk_avl_fliter()">
               </div>
-             
+
               <div class="border bg-light p-3 rounded mb-3">
                 <h5 class="mb-3" style="font-size: 18px;"></h5>
                 <h5 class="mb-3 d-flex align-items-center justify-content-between" style="font-size: 18px;">
@@ -115,16 +115,16 @@
         checkin: checkin.value,
         checkout: checkout.value
       })
-      
-    let guests=JSON.stringify({
-      adults:adult.value,
-      children:children.value
-    });
-  
+
+      let guests = JSON.stringify({
+        adults: adult.value,
+        children: children.value
+      });
+
 
 
       let xhr = new XMLHttpRequest();
-      xhr.open("GET", "ajax/room.php?fetch_rooms&check_aval="+ck_avl+"&guests="+guests, true);
+      xhr.open("GET", "ajax/room.php?fetch_rooms&check_aval=" + ck_avl + "&guests=" + guests, true);
       xhr.onprogress = function() {
         rooms_data.innerHTML = `<div class="spinner-border text-primary d-block mx-auto" role="status">
           <span class="sr-only"></span>
@@ -137,8 +137,8 @@
       xhr.send();
     }
 
-    function guests_filter(){
-      if (adult.value>0 || children.value>0) {
+    function guests_filter() {
+      if (adult.value > 0 || children.value > 0) {
         fetch_rooms();
         guests_btn.classList.remove('d-none');
       }
@@ -153,5 +153,33 @@
 
 
 </body>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const checkin = urlParams.get('checkin');
+    const checkout = urlParams.get('checkout');
+    const adults = urlParams.get('adults');
+    const children = urlParams.get('children');
+
+    if (checkin) document.getElementById('checkin').value = checkin;
+    if (checkout) document.getElementById('checkout').value = checkout;
+    if (adults) document.getElementById('AV').value = adults;
+    if (children) document.getElementById('CV').value = children;
+
+    // Show clear buttons if any filter is applied
+    if (checkin || checkout) {
+      document.getElementById('cl_btn').classList.remove('d-none');
+    }
+
+    if (adults || children) {
+      document.getElementById('guests_btn').classList.remove('d-none');
+    }
+
+    // Now trigger fetch_rooms to load results
+    fetch_rooms();
+  });
+</script>
+
 
 </html>

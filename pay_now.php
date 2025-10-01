@@ -83,33 +83,31 @@ if (isset($_POST['pay_now'])) {
     ]);
 
     $response = curl_exec($curl);
-
     $err = curl_error($curl);
     curl_close($curl);
 
     if ($err) {
-        echo "cURL Error #:" . $err;
+        echo "cURL Error #: " . $err;
     } else {
         $res = json_decode($response);
 
         if (isset($res->success) && $res->success == '1') {
-            // $paymentCode=$res->code;
-            // $paymentMsg=$res->message;
             $payUrl = $res->data->instrumentResponse->redirectInfo->url;
-           
+
+            // Insert into tables only if payment URL was received
+            $query1 = "INSERT INTO `booking_order`(`user_id`, `room_id`, `check_in`, `check_out`,`order_id`) VALUES (?,?,?,?,?)";
+            insert($query1, [$UserId, $_SESSION['room']['sr_no'], $frm_data['checkin'], $frm_data['checkout'], $orderId], 'issss');
+
+            $booking_id = mysqli_insert_id($con);
+
+            $query2 = "INSERT INTO `booking_details`(`booking_id`, `room_name`, `price`, `total_pay`,`username`, `phone`, `address`) VALUES (?,?,?,?,?,?,?)";
+            insert($query2, [$booking_id, $_SESSION['room']['name'], $_SESSION['room']['price'], $amount, $frm_data['name'], $mobile, $frm_data['address']], 'issssss');
+
+            header('Location:' . $payUrl);
+            exit();
+        } else {
+            echo "Payment initiation failed. Please try again.";
+            // Optionally log the error message: $res->code or $res->message
         }
     }
-
-
-    //   insert table
-
-    $query1 = "INSERT INTO `booking_order`(`user_id`, `room_id`, `check_in`, `check_out`,`order_id`) VALUES (?,?,?,?,?)";
-    insert($query1, [$UserId, $_SESSION['room']['sr_no'], $frm_data['checkin'], $frm_data['checkout'], $orderId], 'issss');
-
-    $booking_id = mysqli_insert_id($con);
-    $query2 = "INSERT INTO `booking_details`(`booking_id`, `room_name`, `price`, `total_pay`,`username`, `phone`, `address`) VALUES (?,?,?,?,?,?,?)";
-
-    insert($query2, [$booking_id, $_SESSION['room']['name'], $_SESSION['room']['price'], $amount, $frm_data['name'], $mobile, $frm_data['address']], 'issssss');
-    header('Location:' . $payUrl);
-
 }
