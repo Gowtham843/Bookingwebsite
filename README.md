@@ -120,31 +120,31 @@ while($row = mysqli_fetch_assoc($result)) {
 
 ## 📸 Project Screenshots  
 
-![Homepage Screenshot](images\readme_image\homepage.png)
+![Homepage Screenshot](images/readme_image/homepage.png)
 
-![Room_panel Screenshot](images\readme_image\room_panel.png)
+![Room_panel Screenshot](images/readme_image/room_panel.png)
 
-![Room_page Screenshot](images\readme_image\room_page.png)
+![Room_page Screenshot](images/readme_image/room_page.png)
 
-![Room_payment Screenshot](images\readme_image\payment_page_withfliter.png)
+![Room_payment Screenshot](images/readme_image/payment_page_withfliter.png)
 
-![Booking Screenshot](images\readme_image\booking_page.png)
+![Booking Screenshot](images/readme_image/booking_page.png)
 
-![Admin Panel Screenshot](images\readme_image\admin_homepage.png)
+![Admin Panel Screenshot](images/readme_image/admin_homepage.png)
 
-![Admin Panel Screenshot](images\readme_image\admin_rooms.png)
+![Admin Panel Screenshot](images/readme_image/admin_rooms.png)
 
-![Admin Panel Screenshot](images\readme_image\admin_user_info.png)
+![Admin Panel Screenshot](images/readme_image/admin_user_info.png)
 
-![Admin Panel Screenshot](images\readme_image\admin_review_rate.png)
+![Admin Panel Screenshot](images/readme_image/admin_review_rate.png)
 
-![Admin Panel Screenshot](images\readme_image\settings.png)
+![Admin Panel Screenshot](images/readme_image/settings.png)
 
-![Admin Panel Screenshot](images\readme_image\after_login_homepage.png)
+![Admin Panel Screenshot](images/readme_image/after_login_homepage.png)
 
-![Admin Panel Screenshot](images\readme_image\admin_review_rate.png)
+![Admin Panel Screenshot](images/readme_image/admin_review_rate.png)
 
-![Admin Panel Screenshot](images\readme_image\admin_review_rate.png)
+![Admin Panel Screenshot](images/readme_image/admin_review_rate.png)
 
 
 ## 📌 Future Improvements
