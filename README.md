@@ -1,3 +1,6 @@
+# Demo URL
+http://gowthamhotelbooking.gt.tc/
+
 # Hotel Booking Website  
 
 A full-stack hotel booking system built with **PHP, MySQL, Bootstrap, and Ajax**, integrated with **PhonePe Payment Gateway** and **SMTP Email** notifications. Supports dynamic image uploads for hotel rooms via an admin panel.  
@@ -115,12 +118,34 @@ while($row = mysqli_fetch_assoc($result)) {
 ?>
 ```
 
-## ⚠️ On free hosts like InfinityFree, dynamic uploads may not always display due to restrictions. Consider Firebase Storage or Cloudinary for reliable hosting.
+## 📸 Project Screenshots  
 
-## 🔒 Security Notes
-- Keep API keys and SMTP credentials in .env or config.php (excluded from GitHub)
+![Homepage Screenshot](images\readme_image\homepage.png)
 
-- Don’t commit sensitive keys
+![Room_panel Screenshot](images\readme_image\room_panel.png)
+
+![Room_page Screenshot](images\readme_image\room_page.png)
+
+![Room_payment Screenshot](images\readme_image\payment_page_withfliter.png)
+
+![Booking Screenshot](images\readme_image\booking_page.png)
+
+![Admin Panel Screenshot](images\readme_image\admin_homepage.png)
+
+![Admin Panel Screenshot](images\readme_image\admin_rooms.png)
+
+![Admin Panel Screenshot](images\readme_image\admin_user_info.png)
+
+![Admin Panel Screenshot](images\readme_image\admin_review_rate.png)
+
+![Admin Panel Screenshot](images\readme_image\settings.png)
+
+![Admin Panel Screenshot](images\readme_image\after_login_homepage.png)
+
+![Admin Panel Screenshot](images\readme_image\admin_review_rate.png)
+
+![Admin Panel Screenshot](images\readme_image\admin_review_rate.png)
+
 
 ## 📌 Future Improvements
 - OTP verification for bookings

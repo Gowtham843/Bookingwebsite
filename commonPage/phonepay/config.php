@@ -3,9 +3,9 @@
 define("BASE_URL", "http://localhost/bookingwebsite/");
 define("API_STATUS", "UAT"); //LIVE OR UAT
 define("MERCHANTIDLIVE", "");
-define("MERCHANTIDUAT", "YOUR_PHONEPE_KEY");  //Sandbox testing
+define("MERCHANTIDUAT", "PGTESTPAYUAT");  //Sandbox testing
 define("SALTKEYLIVE", " ");
-define("SALTKEYUAT", "YOUR_PHONEPE_KEY");
+define("SALTKEYUAT", "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399");
 define("SALTINDEX", "1");
 define("REDIRECTURL", "pay_response.php");
 define("SUCCESSURL", "success.php");

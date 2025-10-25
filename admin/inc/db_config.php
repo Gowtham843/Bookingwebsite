@@ -3,12 +3,19 @@ $hname = 'localhost';
 $uname = 'root';
 $pass = '';
 $db = 'hbwebsite';
+$port = 3309;   // 👈 added your new port
 
-$con = mysqli_connect($hname, $uname, $pass, $db);
+$conn = mysqli_connect($hname, $uname, $pass, $db, $port);
 
-if (!$con) {
-    die("Cannot connect to Database" . mysqli_connect_errno());
+$conn = mysqli_connect($hname, $uname, $pass, $db, $port);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+
+// make it available globally
+$GLOBALS['con'] = $conn;
+
 
 function Filteration($data)
 {
